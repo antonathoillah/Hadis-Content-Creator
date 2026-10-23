@@ -1,0 +1,473 @@
+
+        :root {
+            --dark: #092f2a;
+            --emerald: #105c4d;
+            --gold: #c9a34f;
+            --cream: #faf8f2;
+            --ink: #19332e;
+            --muted: #65756f;
+            --line: #dfdfd5
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            /* Latin: Crimson Pro — angka (lining figures) setinggi kapital */
+            font: 15px/1.65 'Crimson Pro', Georgia, 'Times New Roman', serif;
+            font-feature-settings: 'lnum' 1, 'onum' 0;
+            font-variant-numeric: lining-nums
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        header {
+            background: linear-gradient(120deg, #062b27, #146451);
+            color: white;
+            padding: 32px max(22px, calc((100vw - 1180px)/2));
+            border-bottom: 5px solid var(--gold)
+        }
+
+        header .eyebrow {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #f2dca1;
+            font: 12px Arial, sans-serif
+        }
+
+        h1 {
+            font-size: clamp(27px, 4vw, 45px);
+            margin: 8px 0
+        }
+
+        /* Paragraf di header diperlebar */
+        header p {
+            max-width: 1080px;
+            color: #e0eee9;
+            margin: 0
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: auto;
+            padding: 25px 20px 70px
+        }
+
+        .nav {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+            margin-bottom: 22px
+        }
+
+        .nav a {
+            background: white;
+            border: 1px solid var(--line);
+            padding: 9px 13px;
+            border-radius: 9px;
+            text-decoration: none;
+            color: var(--emerald);
+            font: 600 13px Arial, sans-serif
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 6px 24px #173c3210;
+            margin-bottom: 20px
+        }
+
+        h2 {
+            font-size: 23px;
+            margin: 0 0 13px;
+            color: var(--emerald)
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--emerald);
+            margin: 12px 0
+        }
+
+        .small {
+            font: 13px/1.6 Arial, sans-serif;
+            color: var(--muted)
+        }
+
+        label {
+            display: block;
+            font: 700 13px Arial, sans-serif;
+            margin: 13px 0 5px
+        }
+
+        /* Isi form diperbesar tanpa menambah jarak baris */
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid #ccd6cf;
+            border-radius: 9px;
+            padding: 11px;
+            background: #fff;
+            color: #18362e;
+            font-size: 16px; 
+            line-height: 1.5; 
+        }
+
+        textarea {
+            min-height: 82px;
+            resize: vertical
+        }
+
+        /* Teks Arab standar (Ayat di form & preview) */
+        .arabic {
+            font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', serif;
+            font-size: 20px;
+            line-height: 1.85;
+            text-align: right;
+            direction: rtl;
+            min-height: 115px
+        }
+
+        /* Font Arab untuk input teks di dalam grid skenario */
+        .arabic-text {
+            font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', serif;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background: var(--emerald);
+            border: 1px solid var(--emerald);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 9px;
+            font: 700 13px Arial, sans-serif;
+            margin: 5px 5px 5px 0
+        }
+
+        .btn.alt {
+            background: #fff;
+            color: var(--emerald)
+        }
+
+        .btn.gold {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #172c25
+        }
+
+        .notice {
+            border-left: 4px solid var(--gold);
+            background: #fbf6e9;
+            padding: 12px 15px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .step {
+            border: 1px solid #dce5de;
+            border-radius: 11px;
+            padding: 13px;
+            background: #fcfdfa
+        }
+
+        .step b {
+            color: var(--emerald)
+        }
+
+        /* Memperbesar font grid internal (Kritis, Kredibel, Kreatif, dll) */
+        .step, 
+        .notice, 
+        .card p:not(.small), 
+        .scene .body {
+            font-size: 16.5px;
+            line-height: 1.5;
+        }
+
+        .step p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .story {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .scene {
+            border: 1px solid #d7dfd9;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff
+        }
+
+        .scene .visual {
+            background: linear-gradient(140deg, #0a3832, #176855);
+            color: #e5ca80;
+            min-height: 125px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 13px;
+            text-align: center;
+            font-size: 26px
+        }
+
+        .scene .body {
+            padding: 13px
+        }
+
+        .scene .body p {
+            margin: 5px 0
+        }
+
+        .pill {
+            display: inline-block;
+            border-radius: 99px;
+            background: #e9f1ed;
+            padding: 3px 9px;
+            font: 700 11px Arial, sans-serif;
+            color: #175848
+        }
+
+        .screen {
+            aspect-ratio: 9/16;
+            max-width: 310px;
+            margin: 10px auto;
+            background: radial-gradient(circle at 50% 25%, #24765d, #052e2a 70%);
+            border: 9px solid #172b27;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 25px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .screen:before {
+            content: '✦';
+            position: absolute;
+            font-size: 190px;
+            opacity: .06;
+            top: 0
+        }
+
+        .screen .inner {
+            position: relative;
+            z-index: 1
+        }
+
+        .screen .arabic {
+            font-size: 20px;
+            min-height: auto;
+            text-align: center;
+            color: #f4db98
+        }
+
+        .screen .caption {
+            font-size: 17px
+        }
+
+        .screen .time {
+            font: 12px Arial, sans-serif;
+            color: #e7c77c
+        }
+
+        .rubric {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        .rubric th,
+        .rubric td {
+            border-bottom: 1px solid var(--line);
+            padding: 10px;
+            text-align: left
+        }
+
+        .rubric input {
+            max-width: 80px
+        }
+
+        .rubric th {
+            background: #eaf2ed
+        }
+
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--emerald)
+        }
+
+        footer {
+            background: #092f2a;
+            color: #cbded7;
+            text-align: center;
+            padding: 22px;
+            font: 13px Arial, sans-serif
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .status {
+            font: 700 13px Arial, sans-serif;
+            color: var(--emerald)
+        }
+
+        @media(max-width:800px) {
+
+            .grid,
+            .steps,
+            .story {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media print {
+            header {
+                padding: 15px;
+                background: white;
+                color: black
+            }
+
+            .nav,
+            .no-print,
+            .btn {
+                display: none !important
+            }
+
+            .card {
+                break-inside: avoid;
+                box-shadow: none
+            }
+
+            .wrap {
+                padding: 10px
+            }
+
+            .screen {
+                max-width: 220px
+            }
+        }
+
+        .video-preview {
+            max-width: 330px;
+            margin: 12px auto;
+            background: #092f2a;
+            border: 8px solid #172b27;
+            border-radius: 22px;
+            overflow: hidden;
+            aspect-ratio: 9/16;
+            display: flex;
+            align-items: center
+        }
+
+        .video-preview video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block
+        }
+
+        .storyboard-preview {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            background: #f8faf8;
+            margin: 15px 0
+        }
+
+        /* Font pratinjau disamakan */
+        .storyboard-preview .arabic {
+            font-size: 20px;
+            text-align: center;
+            min-height: 0
+        }
+        
+        .storyboard-preview p {
+            font-family: 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', 'Crimson Pro', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .storyboard-preview strong {
+            display: block;
+            color: var(--emerald);
+            font-size: 19px;
+            margin: 7px
+        }
+
+        .storyboard-preview .time {
+            color: #80632d;
+            font-size: 12px
+        }
+
+        /* === Accordion hasil skenario (dipicu tombol "Susun Skenario dari Hadis") === */
+        .accordion-content {
+            overflow: hidden;
+            max-height: 5000px;
+            opacity: 1;
+            transition: max-height .45s ease, opacity .3s ease, margin .3s ease;
+            margin-top: 10px
+        }
+
+        .accordion-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0
+        }
+
+        .btn-chevron {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 11px;
+            transition: transform .35s ease
+        }
+
+        .btn-chevron.up {
+            transform: rotate(180deg)
+        }
+
+        @media print {
+            .accordion-content.collapsed {
+                max-height: none;
+                opacity: 1
+            }
+        }
+    

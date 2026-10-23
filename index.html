@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Hadis Content Creator Academy — Master Praktikum</title>
+<!-- Font Latin: Crimson Pro (angka tinggi sejajar kapital / lining figures). -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="style.css"/></head>
+<body>
+<header>
+<div class="eyebrow">UIN Sunan Ampel Surabaya (UINSA) · Prodi Ilmu Hadis · Praktikum 2026</div>
+<h1>Hadis Content Creator Academy</h1>
+<p>Master Praktikum Mahasiswa Ilmu Hadis — Dari hadis Nabi dan pemahaman hadis menuju konten digital yang <strong>kritis, kredibel, dan
+                kreatif</strong>.</p>
+</header>
+<main class="wrap">
+<nav class="nav no-print">
+<a href="#panduan">Panduan</a>
+<a href="#bahan">Bahan Hadis</a>
+<a href="#verifikasi">Verifikasi</a>
+<a href="#produksi">Storyboard</a>
+<a href="#preview">Pratinjau</a>
+<a href="#rubrik">Rubrik</a>
+<a href="#laporan">Laporan</a>
+</nav>
+<section class="card" id="panduan">
+<h2>01 · Petunjuk Praktikum</h2>
+<div class="steps">
+<div class="step">
+<b>1. Kritis</b>
+<p>Masukkan hadis Nabi, periksa kitab hadis, sanad, matan, terjemahan, dan syarah otoritatif. Jangan menerima keluaran AI sebagai pemahaman hadis yang sudah terverifikasi.</p>
+</div>
+<div class="step">
+<b>2. Kredibel</b>
+<p>Bandingkan syarah hadis, catat rujukan kitab hadis, dan simpulkan pesan secara proporsional. Cantumkan batasan interpretasi dan etika
+                        publikasi.</p>
+</div>
+<div class="step">
+<b>3. Kreatif</b>
+<p>Susun enam adegan, lihat pratinjau, isi rubrik, lalu cetak atau simpan laporan praktikum.</p>
+</div>
+</div>
+<div class="notice">Master beroperasi <strong>offline</strong>. Contoh awal menggunakan hadis niat (Ṣaḥīḥ al-Bukhārī, no. 1) dan video <strong>niat.mp4</strong>. Enam adegan adalah adaptasi tematik hadis, <strong>bukan transkrip audio yang telah diverifikasi</strong>. Mahasiswa dapat mengganti bahan dan menyunting setiap adegan.</div>
+</section>
+<div class="grid">
+<section class="card" id="bahan">
+<h2>02 · Bahan Hadis Nabi</h2>
+<label>Nama mahasiswa / kelompok</label>
+<input id="student" placeholder="Nama dan NIM / Kelompok"/>
+<label>Judul atau tema konten</label>
+<input id="topic" value="Niat: Landasan Amal dan Keikhlasan"/>
+<label>Teks Arab hadis Nabi (harakat penuh)</label>
+<textarea class="arabic" id="arabic">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى</textarea>
+<label>Terjemahan bahasa Indonesia</label>
+<textarea id="translation">Sesungguhnya setiap amal bergantung pada niatnya, dan setiap orang memperoleh sesuai dengan apa yang diniatkannya.</textarea>
+<label>Kitab, bab, dan nomor hadis</label>
+<input id="source" value="Ṣaḥīḥ al-Bukhārī, hadis no. 1 (permulaan wahyu); juga diriwayatkan Muslim."/>
+<label>Pesan utama untuk audiens</label>
+<textarea id="message">Niat menentukan orientasi dan nilai amal. Keikhlasan dan tujuan yang benar perlu menyertai tindakan sehari-hari.</textarea>
+<button class="btn alt" onclick="loadExample()">Isi Contoh Hadis Niat</button>
+<button class="btn alt" onclick="clearMaterials()">Kosongkan Bahan</button>
+</section>
+<section class="card" id="verifikasi">
+<h2>03 · Lembar Verifikasi Ilmiah</h2>
+<label>Takhrij: sumber hadis, kitab, bab, dan nomor</label>
+<textarea id="takhrij" placeholder="Tuliskan kitab hadis, bab, nomor hadis, dan hasil takhrij yang diperiksa..."></textarea>
+<label>Kajian sanad, perawi, dan penilaian kualitas hadis</label>
+<textarea id="sanad" placeholder="Catat perawi, sanad, kualitas hadis, dan rujukan kritik hadis yang diperiksa..."></textarea>
+<label>Pemeriksaan matan, harakat, dan terjemahan hadis</label>
+<textarea id="matan" placeholder="Periksa lafaz matan, harakat, dan terjemahan terhadap kitab hadis..."></textarea>
+<label>Syarah hadis, konteks, dan batasan pemaknaan</label>
+<textarea id="context" placeholder="Uraikan konteks pemahaman dan hindari generalisasi..."></textarea>
+<label>URL / identitas sumber yang diperiksa</label>
+<input id="url" placeholder="URL sumber atau bibliografi lengkap"/>
+<label>
+<input id="verified" style="width:auto" type="checkbox"/> Saya telah memeriksa teks dan rujukan
+                    secara mandiri
+                </label>
+<p class="small">Centang merupakan pernyataan mahasiswa, bukan validasi otomatis oleh sistem.</p>
+</section>
+</div>
+<!-- === 04 · GENERATOR SKENARIO (accordion dipicu tombol) === -->
+<section class="card" id="produksi">
+<h2>04 · Generator Skenario Video Pendek</h2>
+<p class="small">Enam adegan contoh hadis niat (Ṣaḥīḥ al-Bukhārī, no. 1) disusun secara tematik untuk mendampingi video niat.mp4. Bukan transkrip persis audio. Untuk bahan pilihan mahasiswa, tersedia skenario umum yang dapat diedit.</p>
+<!-- Tombol toggle: buka + susun / tutup -->
+<button aria-controls="produksi-content" aria-expanded="false" class="btn gold" id="generateBtn" onclick="toggleScenarios()">
+<span id="generateBtnLabel">Susun Skenario dari Hadis</span><span class="btn-chevron" id="generateBtnChevron">▾</span>
+</button>
+<button class="btn alt" onclick="saveDraft()">Simpan Draf di Browser</button>
+<button class="btn alt" onclick="restoreDraft()">Muat Draf</button>
+<!-- Area hasil yang bisa di-collapse -->
+<div aria-hidden="true" class="accordion-content collapsed" id="produksi-content">
+<p aria-live="polite" class="status" id="saveStatus"></p>
+<div class="story" id="scenes">
+<p class="small">Klik “Susun Skenario dari Hadis” untuk menampilkan enam adegan.</p>
+</div>
+</div>
+</section>
+<!-- === /04 === -->
+<div class="grid">
+<section class="card" id="preview">
+<h2>05 · Pratinjau Video dan Storyboard 9:16</h2>
+<div class="video-preview">
+<video aria-label="Video contoh hadis niat" controls="" id="hadithVideo" playsinline="" preload="metadata">
+<source src="niat.mp4" type="video/mp4"/>Browser Anda tidak mendukung pemutaran video MP4.
+                    </video>
+</div>
+<p class="small"><strong>Video niat.mp4 (unggahan narasumber).</strong> Klik tombol putar untuk
+                    menonton. Simpan file <code>niat.mp4</code> di lokasi yang sama dengan <code>index.html</code>. Video contoh ini
+                    tidak berubah otomatis ketika mahasiswa memasukkan hadis lain.</p>
+<h3>Pratinjau teks storyboard mahasiswa</h3>
+<div class="storyboard-preview">
+<div class="time" id="frameTime">STORYBOARD · 00–10 DETIK</div>
+<strong id="frameTitle">Adegan-1</strong>
+<div class="arabic" id="frameArabic">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ</div>
+<p id="frameCaption">Niat menentukan nilai amal.</p>
+</div>
+<div style="text-align:center">
+<button class="btn alt" onclick="prevFrame()">◀ Sebelumnya</button>
+<button class="btn" onclick="nextFrame()">Berikutnya ▶</button>
+<button class="btn alt" id="playButton" onclick="togglePlay()">Putar Storyboard</button>
+</div>
+<p class="small">Pratinjau storyboard menggunakan teks hadis yang diisi mahasiswa; video MP4 di atas
+                    merupakan contoh tetap.</p>
+</section>
+<section class="card" id="rubrik">
+<h2>06 · Rubrik Penilaian Analitik</h2>
+<p class="small">Masukkan skor 0–100 pada setiap kriteria. Nilai akhir dihitung otomatis dengan bobot.
+                </p>
+<table class="rubric">
+<thead>
+<tr>
+<th>Kriteria</th>
+<th>Bobot</th>
+<th>Skor</th>
+</tr>
+</thead>
+<tbody id="rubricRows"></tbody>
+</table>
+<p>Nilai akhir: <span class="total" id="total">0,0</span> / 100</p>
+<label>Catatan penilai / tindak lanjut</label>
+<textarea id="feedback" placeholder="Kekuatan, kekurangan, dan perbaikan..."></textarea>
+</section>
+</div>
+<section class="card" id="laporan">
+<h2>07 · Laporan Hasil Praktikum</h2>
+<p>Setelah mengisi bahan, verifikasi, storyboard, dan rubrik, gunakan tombol berikut untuk menghasilkan
+                laporan yang dapat disimpan sebagai PDF melalui fitur cetak browser atau diunduh sebagai teks.</p>
+<button class="btn" onclick="makeReport()">Perbarui Laporan</button>
+<button class="btn alt" onclick="window.print()">Cetak / Simpan PDF</button>
+<button class="btn alt" onclick="downloadReport()">Unduh Laporan TXT</button>
+<div class="notice" id="report">Laporan belum dibuat.</div>
+</section>
+</main>
+<footer>Master Praktikum · Hadis Content Creator Academy · UIN Sunan Ampel Surabaya (UINSA) · Prodi Ilmu Hadis · 2026<br/>Materi dan penilaian
+        wajib ditinjau oleh dosen/pembimbing sebelum publikasi.</footer>
+
+<script src="script.js"></script></body>
+</html>
